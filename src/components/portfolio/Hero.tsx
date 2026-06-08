@@ -287,8 +287,8 @@ export function Hero() {
 
           {/* Main headline — slam in from scale */}
           <div className="mt-8 space-y-0 md:mt-10">
-            <motion.h1
-              className="font-gta text-balance text-[clamp(2.8rem,10vw,6.5rem)] leading-[0.95] tracking-wide text-foreground"
+            <motion.h4
+              className="font-gta text-balance text-[clamp(2.8rem,10vw,6rem)] leading-[0.95] tracking-wide text-foreground"
               initial={{ opacity: 0, scale: 1.4, y: 40, filter: "blur(10px)" }}
               animate={
                 introDone
@@ -298,9 +298,9 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             >
               CRAFTING MOBILE APPS
-            </motion.h1>
-            <motion.h1
-              className="font-gta text-balance text-[clamp(2.8rem,10vw,6.5rem)] leading-[0.95] tracking-wide text-foreground"
+            </motion.h4>
+            <motion.h4
+              className="font-gta text-balance text-[clamp(1.8rem,10vw,6rem)] leading-[0.95] tracking-wide text-foreground"
               initial={{ opacity: 0, scale: 1.4, y: 40, filter: "blur(10px)" }}
               animate={
                 introDone
@@ -310,9 +310,9 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             >
               AND SOFTWARE THAT
-            </motion.h1>
-            <motion.h1
-              className="font-gta accent-text text-balance text-[clamp(2.8rem,10vw,6.5rem)] leading-[0.95] tracking-wide"
+            </motion.h4>
+            <motion.h4
+              className="font-gta accent-text text-balance text-[clamp(1.8rem,10vw,6rem)] leading-[0.95] tracking-wide"
               initial={{ opacity: 0, scale: 1.5, x: -30 }}
               animate={
                 introDone
@@ -322,7 +322,7 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
               SHIPS.
-            </motion.h1>
+            </motion.h4>
             <motion.p
               className="font-gta mt-2 text-2xl tracking-[0.2em] text-muted-foreground md:text-3xl"
               initial={{ opacity: 0, x: -20 }}
@@ -371,7 +371,7 @@ export function Hero() {
           </motion.div>
 
           {/* Stats — GTA HUD bars */}
-          <motion.dl
+          {/* <motion.dl
             className="mt-20 grid grid-cols-2 gap-6 border-t border-primary/20 pt-10 sm:grid-cols-4"
             initial="hidden"
             animate={introDone ? "visible" : "hidden"}
@@ -401,7 +401,7 @@ export function Hero() {
                 </dd>
               </motion.div>
             ))}
-          </motion.dl>
+          </motion.dl> */}
         </div>
       </div>
 

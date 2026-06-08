@@ -1,45 +1,96 @@
+"use client";
+
+import { motion } from "motion/react";
+import profileImg from "@/assets/image/profileImg.png";
 import { Section } from "./Section";
+import {
+  slideInRight,
+  staggerContainer,
+  staggerItem,
+  viewport,
+} from "./motion";
 
 export function About() {
   return (
-    <Section
-      id="about"
-      eyebrow="About"
-      title={<>A pragmatic engineer with a designer's eye.</>}
-    >
-      <div className="grid gap-12 md:grid-cols-3">
-        <div className="space-y-5 text-base leading-relaxed text-muted-foreground md:col-span-2">
-          <p>
-            For the last six years I've partnered with founders and product
-            teams to ship software that holds up under real traffic — from
-            zero-to-one MVPs to platforms serving millions of monthly users.
-          </p>
-          <p>
-            My work sits at the intersection of <span className="text-foreground">product engineering</span>,{" "}
-            <span className="text-foreground">infrastructure</span>, and{" "}
-            <span className="text-foreground">design systems</span>. I care
-            about the boring fundamentals: clean type, fast pages, predictable
-            APIs, and code other people can read on a Monday morning.
-          </p>
-          <p>
-            Currently based in Ho Chi Minh City, working remotely with teams
-            across SEA, Europe, and the US.
-          </p>
-        </div>
-        <div className="space-y-6 border-l border-border pl-8">
-          <div>
-            <div className="text-xs uppercase tracking-wider text-muted-foreground">Currently</div>
-            <div className="mt-1 text-sm text-foreground">Senior Engineer, Independent</div>
+    <Section id="about" eyebrow="About" title={<></>}>
+      <div className="grid items-start gap-12 md:grid-cols-[2fr_1fr]">
+        <motion.div
+          className="space-y-5 text-base leading-relaxed text-muted-foreground"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          variants={staggerContainer}
+        >
+          {[
+            <h1 className="font-bricolage text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
+              Hey, I'm <span className="text-primary">Sudev</span>
+            </h1>,
+
+            <>
+              Over the past few years, I've been building web and mobile
+              applications — from personal projects to production-ready
+              products focused on performance, scalability, and usability.
+            </>,
+
+            <>
+              My work sits at the intersection of{" "}
+              <span className="text-foreground">
+                software engineering
+              </span>
+              ,{" "}
+              <span className="text-foreground">
+                product development
+              </span>
+              , and{" "}
+              <span className="text-foreground">
+                user experience
+              </span>
+              . I focus on clean code, scalable systems, and intuitive
+              interfaces that deliver real value.
+            </>,
+
+            <>
+              Based in India, I'm constantly learning and building,
+              turning ideas into thoughtful digital products and meaningful
+              user experiences.
+            </>,
+          ].map((text, i) => (
+            <motion.div key={i} variants={staggerItem}>
+              {text}
+            </motion.div>
+          ))}
+
+          <div className="grid gap-6 border-t border-border pt-8 sm:grid-cols-3">
+            {[
+              { label: "Currently", value: "Software Developer" },
+              { label: "Location", value: "India" },
+              { label: "Focus", value: "Web, Mobile & AI Applications" },
+            ].map((item) => (
+              <motion.div key={item.label} variants={staggerItem}>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground">
+                  {item.label}
+                </div>
+                <div className="mt-1 text-sm text-foreground">
+                  {item.value}
+                </div>
+              </motion.div>
+            ))}
           </div>
-          <div>
-            <div className="text-xs uppercase tracking-wider text-muted-foreground">Location</div>
-            <div className="mt-1 text-sm text-foreground">Ho Chi Minh City, VN</div>
-          </div>
-          <div>
-            <div className="text-xs uppercase tracking-wider text-muted-foreground">Focus</div>
-            <div className="mt-1 text-sm text-foreground">Web platforms, DX, AI tooling</div>
-          </div>
-        </div>
+        </motion.div>
+
+        <motion.div
+          className="flex justify-center md:justify-end"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          variants={slideInRight}
+        >
+          <img
+            src={profileImg}
+            alt="Profile"
+            className="aspect-[3/4] w-full max-w-sm rounded-2xl border border-border object-cover shadow-lg"
+          />
+        </motion.div>
       </div>
     </Section>
   );
