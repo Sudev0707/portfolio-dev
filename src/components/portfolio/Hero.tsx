@@ -217,7 +217,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative flex min-h-[100svh] items-center overflow-hidden pt-14">
+    <section className="relative flex min-h-[100svh] items-center overflow-hidden">
       <GtaBackground />
       <GtaIntro phase={introPhase} />
 
@@ -270,7 +270,7 @@ export function Hero() {
             animate={introDone ? "visible" : "hidden"}
             variants={fadeUp}
           >
-            <div className="inline-flex items-center gap-3 border border-primary/40 bg-black/40 px-4 py-2 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-3 rounded-full border-primary/40 bg-black/40 px-4 py-2 backdrop-blur-sm">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/60 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
@@ -288,38 +288,52 @@ export function Hero() {
           {/* Main headline — slam in from scale */}
           <div className="mt-8 space-y-0 md:mt-10">
             <motion.h4
-              className="font-gta text-balance text-[clamp(2.8rem,10vw,6rem)] leading-[0.95] tracking-wide text-foreground"
+              className="font-gta text-balance text-[clamp(2.5rem,8vw,5rem)] leading-[0.95] tracking-wide text-foreground"
               initial={{ opacity: 0, scale: 1.4, y: 40, filter: "blur(10px)" }}
               animate={
                 introDone
                   ? { opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }
                   : { opacity: 0, scale: 1.4, y: 40, filter: "blur(10px)" }
               }
-              transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.8,
+                delay: 0.15,
+                ease: [0.16, 1, 0.3, 1],
+              }}
             >
               CRAFTING MOBILE APPS
             </motion.h4>
+
             <motion.h4
-              className="font-gta text-balance text-[clamp(1.8rem,10vw,6rem)] leading-[0.95] tracking-wide text-foreground"
+              className="font-gta text-balance text-[clamp(1.8rem,6vw,4rem)] leading-[0.95] tracking-wide text-foreground"
               initial={{ opacity: 0, scale: 1.4, y: 40, filter: "blur(10px)" }}
               animate={
                 introDone
                   ? { opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }
                   : { opacity: 0, scale: 1.4, y: 40, filter: "blur(10px)" }
               }
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.8,
+                delay: 0.3,
+                ease: [0.16, 1, 0.3, 1],
+              }}
             >
               AND SOFTWARE THAT
             </motion.h4>
+
             <motion.h4
-              className="font-gta accent-text text-balance text-[clamp(1.8rem,10vw,6rem)] leading-[0.95] tracking-wide"
+              className="font-gta accent-text text-balance text-[clamp(1.8rem,6vw,4rem)] leading-[0.95] tracking-wide"
               initial={{ opacity: 0, scale: 1.5, x: -30 }}
               animate={
                 introDone
                   ? { opacity: 1, scale: 1, x: 0 }
                   : { opacity: 0, scale: 1.5, x: -30 }
               }
-              transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 0.7,
+                delay: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
               SHIPS.
             </motion.h4>

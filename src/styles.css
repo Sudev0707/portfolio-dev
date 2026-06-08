@@ -51,6 +51,7 @@
 }
 
 :root {
+  --font-bricolage: "Bricolage Grotesque", system-ui, sans-serif;
   --radius: 0.5rem;
   /* Deep charcoal */
   --background: oklch(0.16 0.005 260);
@@ -152,7 +153,7 @@
 }
 
 @utility font-bricolage {
-  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-family: var(--font-bricolage);
 }
 
 @utility gta-scanlines {

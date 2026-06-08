@@ -12,7 +12,7 @@ import {
 
 export function About() {
   return (
-    <Section id="about" eyebrow="About" title={<></>}>
+    <Section id="about" eyebrow="About" title={<></>} className="pt-24">
       <div className="grid items-start gap-12 md:grid-cols-[2fr_1fr]">
         <motion.div
           className="space-y-5 text-base leading-relaxed text-muted-foreground"
@@ -49,11 +49,11 @@ export function About() {
               interfaces that deliver real value.
             </>,
 
-            <>
-              Based in India, I'm constantly learning and building,
-              turning ideas into thoughtful digital products and meaningful
-              user experiences.
-            </>,
+            // <>
+            //   Based in India, I'm constantly learning and building,
+            //   turning ideas into thoughtful digital products and meaningful
+            //   user experiences.
+            // </>,
           ].map((text, i) => (
             <motion.div key={i} variants={staggerItem}>
               {text}
