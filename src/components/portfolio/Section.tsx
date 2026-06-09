@@ -11,6 +11,7 @@ export function Section({
   title,
   description,
   className,
+  centered,
   children,
 }: {
   id: string;
@@ -18,6 +19,7 @@ export function Section({
   title: ReactNode;
   description?: string;
   className?: string;
+  centered?: boolean;
   children: ReactNode;
 }) {
   return (
@@ -30,7 +32,10 @@ export function Section({
     >
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
-          className="mb-14 max-w-2xl"
+          className={cn(
+            "mb-14 max-w-2xl",
+            centered && "mx-auto max-w-3xl text-center",
+          )}
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
@@ -40,14 +45,28 @@ export function Section({
           }}
         >
           <motion.div
-            className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-muted-foreground"
-            variants={slideInLeft}
+            className={cn(
+              "flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-muted-foreground",
+              centered && "justify-center",
+            )}
+            variants={centered ? fadeUp : slideInLeft}
           >
-            <span className="h-px w-6 bg-primary/70" />
-            {eyebrow}
+            {centered ? (
+              <span className="rounded-full border border-border bg-card px-4 py-1.5 text-xs font-medium normal-case tracking-normal text-muted-foreground">
+                {eyebrow}
+              </span>
+            ) : (
+              <>
+                <span className="h-px w-6 bg-primary/70" />
+                {eyebrow}
+              </>
+            )}
           </motion.div>
           <motion.h2
-            className="font-bricolage mt-4 text-xl font-semibold tracking-tight md:text-2xl"
+            className={cn(
+              "font-bricolage mt-4 text-xl font-semibold tracking-tight md:text-2xl",
+              centered && "md:text-3xl lg:text-4xl",
+            )}
             variants={fadeUp}
           >
             {title}

@@ -245,7 +245,7 @@ export function Hero() {
           <p className="font-gta text-[10px] tracking-[0.3em] text-primary">MISSION</p>
           <p className="font-gta mt-1 text-lg tracking-wider text-foreground">BUILD & SHIP</p>
           <div className="mt-3 space-y-1.5">
-            {["React Native", "TypeScript", "Node.js"].map((skill, i) => (
+            {["React ", "React Native", "TypeScript", "Node.js"].map((skill, i) => (
               <motion.div
                 key={skill}
                 className="flex items-center gap-2 text-[10px] uppercase tracking-wider text-muted-foreground"
@@ -354,7 +354,7 @@ export function Hero() {
             custom={0.2}
             variants={fadeUp}
           >
-            I&apos;m Sudev Majhi — a mobile and full-stack engineer focused on
+            I&apos;m <span className="text-primary font-bricolage text-2xl font-bold">Sudev Majhi</span> — a mobile and full-stack engineer focused on
             native-quality experiences, performance, and the interaction details
             that make products feel inevitable.
           </motion.p>
