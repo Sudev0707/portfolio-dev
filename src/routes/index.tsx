@@ -40,7 +40,7 @@ function Index() {
       <Projects />
       {/* <BentoGrid /> */}
       {/* <Experience /> */}
-      <HowItWorks />
+      {/* <HowItWorks /> */}
       <WorkPhilosophy />
       <Contact />
     </main>

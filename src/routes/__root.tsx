@@ -11,6 +11,7 @@ import { type ReactNode } from "react";
 
 
 import appCss from "../styles.css?url";
+import { MouseTrail } from "@/components/MouseTrail";
 
 
 function NotFoundComponent() {
@@ -120,6 +121,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <MouseTrail style="line" blendMode="screen" size={2.5} length={50} />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>

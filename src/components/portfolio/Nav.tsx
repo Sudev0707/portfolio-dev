@@ -31,9 +31,9 @@ function BrandLogo() {
 export function Nav() {
   const links = [
     { href: "#projects", label: "Apps" },
-    { href: "#about", label: "About" },
-    { href: "#highlights", label: "Principles" },
+    { href: "#about", label: "About" },   
     { href: "#contact", label: "Contact" },
+    { href: "#highlights", label: "Resume" },
   ];
 
   const { scrollY } = useScroll();

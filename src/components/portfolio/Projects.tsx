@@ -240,7 +240,15 @@ const projects: Project[] = [
   },
 ];
 
-function ProjectDetails({ project }: { project: Project }) {
+function ProjectDetails({
+  project,
+  index,
+  total,
+}: {
+  project: Project;
+  index: number;
+  total: number;
+}) {
   return (
     <motion.div
       key={project.name}
@@ -250,6 +258,12 @@ function ProjectDetails({ project }: { project: Project }) {
       transition={{ duration: 0.45, ease }}
       className="space-y-8"
     >
+      <p className="hidden font-mono text-xs tracking-wider text-muted-foreground lg:block">
+        {String(index + 1).padStart(2, "0")}
+        <span className="text-muted-foreground/40"> / </span>
+        {String(total).padStart(2, "0")}
+      </p>
+
       <div>
         <div className="flex items-center gap-3">
           <span className="h-px w-8 bg-primary" aria-hidden />
@@ -257,13 +271,18 @@ function ProjectDetails({ project }: { project: Project }) {
           <h3 className="font-bricolage text-xl font-semibold tracking-tight text-foreground md:text-2xl">
             {project.name}
           </h3>
+          <p className="ml-auto shrink-0 font-mono text-xs tracking-wider text-muted-foreground lg:hidden">
+            {String(index + 1).padStart(2, "0")}
+            <span className="text-muted-foreground/40"> / </span>
+            {String(total).padStart(2, "0")}
+          </p>
         </div>
-        <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
+        <p className="mt-5 max-w-md line-clamp-2 text-base leading-relaxed text-muted-foreground lg:line-clamp-none">
           {project.description}
         </p>
       </div>
 
-      <ul className="space-y-4">
+      {/* <ul className="space-y-4">
         {project.features.map((feature) => (
           <li key={feature} className="flex gap-2 text-xs leading-relaxed text-foreground/85">
             <Sparkle
@@ -274,7 +293,7 @@ function ProjectDetails({ project }: { project: Project }) {
             {feature}
           </li>
         ))}
-      </ul>
+      </ul> */}
 
       <div className="flex flex-wrap gap-2">
         {project.tags.map((tag) => (
@@ -375,13 +394,15 @@ export function Projects() {
               className="min-h-[60vh] "
             >
               <div
-                className={`h-full min-h-[420px] overflow-hidden rounded-3xl border transition-opacity duration-500 ${
-                  activeIndex === index
-                    ? "border-border/80 opacity-100"
-                    : "border-border/40 opacity-55"
-                }`}
+                className={`h-full min-h-[420px] overflow-hidden rounded-3xl p-1.5 bg-card border transition-opacity duration-500 ${activeIndex === index
+                  ? "border-border/80 opacity-100"
+                  : "border-border/40 opacity-55"
+                  }`}
               >
-                {project.thumbnail}
+                <div className="rounded-3xl overflow-hidden">
+                  {project.thumbnail}
+                </div>
+
               </div>
             </div>
           ))}
@@ -390,7 +411,11 @@ export function Projects() {
         <div className="relative">
           <div className="sticky top-40 py-4">
             <AnimatePresence mode="wait">
-              <ProjectDetails project={activeProject} />
+              <ProjectDetails
+                project={activeProject}
+                index={activeIndex}
+                total={projects.length}
+              />
             </AnimatePresence>
           </div>
         </div>
@@ -398,15 +423,31 @@ export function Projects() {
 
       {/* Mobile: stacked cards */}
       <div className="space-y-16 lg:hidden">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <article key={project.name} className="space-y-8">
-            <div className="min-h-[320px] overflow-hidden rounded-3xl border border-border/60">
-              {project.thumbnail}
+            <div className="overflow-hidden rounded-3xl border border-border/60 bg-card p-1">
+              <div className="h-[308px] overflow-hidden rounded-2xl">
+                {project.thumbnail}
+              </div>
             </div>
-            <ProjectDetails project={project} />
+            <ProjectDetails
+              project={project}
+              index={index}
+              total={projects.length}
+            />
           </article>
         ))}
       </div>
+
+      <div className="flex justify-center mt-10">
+        <button className="group mx-auto rounded-full px-6 py-3 self-center inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary">see more projects
+          <ArrowUpRight
+            className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            aria-hidden
+          />
+        </button>
+      </div>
+
     </Section>
   );
 }

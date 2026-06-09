@@ -5,8 +5,12 @@ import { fadeUp, scaleIn, staggerContainer, staggerItem, viewport } from "./moti
 
 export function Contact() {
   return (
-    <section id="contact" className="border-t border-border/60 py-28">
-      <div className="mx-auto max-w-4xl px-6 text-center">
+    <section id="contact" className="border-t border-border/60 pb-28">
+      <div className="relative mx-auto max-w-4xl px-6 text-center pt-28">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[radial-gradient(ellipse_at_top,oklch(0.62_0.14_162/0.1),transparent_65%)]"
+        />
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -22,7 +26,7 @@ export function Contact() {
             <span className="h-px w-6 bg-primary/70" />
           </motion.div>
           <motion.h2
-            className="mt-5 text-balance text-4xl font-semibold tracking-tight md:text-5xl"
+            className="font-bricolage mt-5 text-balance text-4xl font-semibold tracking-tight md:text-5xl"
             variants={fadeUp}
           >
             Have a project in mind? <span className="accent-text">Let's talk.</span>
@@ -83,7 +87,7 @@ export function Contact() {
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         <div className="flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
-          <span>© 2026 Chánh Đại. Crafted with care.</span>
+          <span>© 2026 Sudev Majhi. Crafted with care.</span>
           <span className="font-mono">v1.0 · Built with TanStack Start</span>
         </div>
       </motion.footer>

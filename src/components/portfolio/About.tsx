@@ -18,7 +18,7 @@ import {
 export function About() {
   return (
     <Section id="about" eyebrow="About" title={<></>} className="pt-24">
-      <div className="grid items-start gap-12 md:grid-cols-[2fr_1fr]">
+      <div className="grid items-start gap-12 md:grid-cols-[2fr_1fr] px-0">
         <motion.div
           className="space-y-5 text-base leading-relaxed text-muted-foreground"
           initial="hidden"
@@ -115,7 +115,7 @@ export function About() {
             variants={fadeUp}
           >
             <img src={signatureImg} alt="Signature" className="w-45 h-25 object-contain" />
-            <div className="flex items-end gap-2">
+            <div className="flex items-center gap-2">
               <Link
                 to="/about"
                 className="group inline-flex rounded-full items-center gap-2  border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary/60 hover:text-primary"
