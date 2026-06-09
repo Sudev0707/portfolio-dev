@@ -2,7 +2,15 @@
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowRight, ArrowUpRight, Sparkle } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Globe,
+  Landmark,
+  LayoutGrid,
+  PenLine,
+  Sparkle,
+} from "lucide-react";
 import {
   SiCloudflare,
   SiNextdotjs,
@@ -22,8 +30,26 @@ type Project = {
   tags: { label: string; icon?: ReactNode }[];
   year: string;
   href: string;
+  icon: ReactNode;
   thumbnail: ReactNode;
 };
+
+function ProjectAppIcon({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`flex size-10 shrink-0 items-center justify-center rounded-xl border border-border/60 bg-primary/15 text-primary md:size-12 ${className ?? ""}`}
+      aria-hidden
+    >
+      {children}
+    </div>
+  );
+}
 
 const projects: Project[] = [
   {
@@ -34,7 +60,6 @@ const projects: Project[] = [
       "Automated double-entry ledger with audit trails",
       "Real-time sync across Stripe, PayPal, and 10+ processors",
       "Role-based dashboards for finance and ops teams",
-      "Export-ready reports for tax and compliance workflows",
     ],
     tags: [
       { label: "TypeScript", icon: <SiTypescript className="size-3" /> },
@@ -43,6 +68,11 @@ const projects: Project[] = [
     ],
     year: "2025",
     href: "#",
+    icon: (
+      <ProjectAppIcon>
+        <Landmark className="size-5 md:size-6" strokeWidth={1.75} />
+      </ProjectAppIcon>
+    ),
     thumbnail: (
       <div className="relative flex h-full flex-col justify-between overflow-hidden bg-[oklch(0.14_0.01_260)] p-8 md:p-10">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,oklch(0.62_0.14_162/0.18),transparent_55%)]" />
@@ -83,7 +113,6 @@ const projects: Project[] = [
       "Accessible primitives built on Radix UI",
       "Data tables with sorting, filtering, and virtualization",
       "Command palette and keyboard-first navigation patterns",
-      "Theming tokens for consistent design systems",
     ],
     tags: [
       { label: "React", icon: <SiReact className="size-3" /> },
@@ -92,6 +121,11 @@ const projects: Project[] = [
     ],
     year: "2024",
     href: "#",
+    icon: (
+      <ProjectAppIcon>
+        <LayoutGrid className="size-5 md:size-6" strokeWidth={1.75} />
+      </ProjectAppIcon>
+    ),
     thumbnail: (
       <div className="relative flex h-full flex-col justify-between overflow-hidden bg-[oklch(0.22_0.04_280)] p-8 md:p-10">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,oklch(0.62_0.14_162/0.25),transparent_50%)]" />
@@ -121,7 +155,6 @@ const projects: Project[] = [
       "Edge-replicated storage with strong consistency options",
       "Sub-20ms reads from any global PoP",
       "Rust-powered runtime with minimal cold starts",
-      "Built for high-throughput serverless workloads",
     ],
     tags: [
       { label: "Rust", icon: <SiRust className="size-3" /> },
@@ -130,21 +163,40 @@ const projects: Project[] = [
     ],
     year: "2024",
     href: "#",
+    icon: (
+      <ProjectAppIcon>
+        <Globe className="size-5 md:size-6" strokeWidth={1.75} />
+      </ProjectAppIcon>
+    ),
     thumbnail: (
-      <div className="relative flex h-full items-center justify-center overflow-hidden bg-[oklch(0.18_0.02_220)] p-8 md:p-10">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,oklch(0.62_0.14_162/0.12),transparent_65%)]" />
-        <div className="relative grid w-full max-w-sm grid-cols-3 gap-4">
-          {Array.from({ length: 9 }).map((_, i) => (
-            <div
-              key={i}
-              className="aspect-square rounded-full border border-primary/30 bg-primary/10"
-              style={{ opacity: 0.4 + (i % 3) * 0.2 }}
-            />
-          ))}
+      <div className="relative flex h-full flex-col justify-between overflow-hidden bg-[oklch(0.14_0.01_260)] p-8 md:p-10">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,oklch(0.62_0.14_162/0.18),transparent_55%)]" />
+        <div className="relative">
+          <p className="font-bricolage text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+            Entrepreneurs
+          </p>
+          <p className="mt-2 max-w-sm text-sm text-muted-foreground">
+            Finance operations at startup speed.
+          </p>
         </div>
-        <p className="absolute bottom-8 left-8 font-mono text-xs uppercase tracking-[0.2em] text-primary/80">
-          Global edge mesh
-        </p>
+        <div className="relative mt-8 space-y-3">
+          <div className="h-10 rounded-lg border border-border/60 bg-card/80 px-4 text-sm leading-10 text-muted-foreground">
+            Search transactions…
+          </div>
+          <div className="grid grid-cols-3 gap-2">
+            {["Revenue", "Burn", "Runway"].map((label) => (
+              <div
+                key={label}
+                className="rounded-lg border border-border/50 bg-card/60 p-3"
+              >
+                <p className="text-[10px] uppercase tracking-wider text-muted-foreground">
+                  {label}
+                </p>
+                <p className="mt-1 font-mono text-sm text-foreground">$24.8k</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     ),
   },
@@ -156,7 +208,6 @@ const projects: Project[] = [
       "CRDT sync for conflict-free collaborative editing",
       "Offline-first with automatic merge on reconnect",
       "AI-assisted rewrites and inline suggestions",
-      "Markdown-native with live preview panes",
     ],
     tags: [
       { label: "TypeScript", icon: <SiTypescript className="size-3" /> },
@@ -165,6 +216,11 @@ const projects: Project[] = [
     ],
     year: "2023",
     href: "#",
+    icon: (
+      <ProjectAppIcon>
+        <PenLine className="size-5 md:size-6" strokeWidth={1.75} />
+      </ProjectAppIcon>
+    ),
     thumbnail: (
       <div className="relative flex h-full flex-col overflow-hidden bg-[oklch(0.17_0.015_260)] p-8 md:p-10">
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,oklch(0.62_0.14_162/0.08),transparent_50%)]" />
@@ -197,7 +253,8 @@ function ProjectDetails({ project }: { project: Project }) {
       <div>
         <div className="flex items-center gap-3">
           <span className="h-px w-8 bg-primary" aria-hidden />
-          <h3 className="font-bricolage text-xl font-semibold tracking-tight text-foreground md:text-3xl">
+          {project.icon}
+          <h3 className="font-bricolage text-xl font-semibold tracking-tight text-foreground md:text-2xl">
             {project.name}
           </h3>
         </div>
@@ -208,7 +265,7 @@ function ProjectDetails({ project }: { project: Project }) {
 
       <ul className="space-y-4">
         {project.features.map((feature) => (
-          <li key={feature} className="flex gap-3 text-sm leading-relaxed text-foreground/85">
+          <li key={feature} className="flex gap-2 text-xs leading-relaxed text-foreground/85">
             <Sparkle
               className="mt-0.5 size-4 shrink-0 text-primary"
               strokeWidth={1.75}
@@ -306,7 +363,7 @@ export function Projects() {
       className="pb-24"
     >
       {/* Desktop: sticky scroll reveal */}
-      <div className="hidden lg:grid lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+      <div className="hidden lg:grid lg:grid-cols-[1.3fr_0.7fr] lg:gap-14">
         <div className="space-y-10">
           {projects.map((project, index) => (
             <div
@@ -315,7 +372,7 @@ export function Projects() {
                 itemRefs.current[index] = node;
               }}
               data-index={index}
-              className="min-h-[70vh]"
+              className="min-h-[60vh] "
             >
               <div
                 className={`h-full min-h-[420px] overflow-hidden rounded-3xl border transition-opacity duration-500 ${

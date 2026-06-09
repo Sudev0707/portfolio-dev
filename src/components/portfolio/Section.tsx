@@ -15,7 +15,7 @@ export function Section({
   children,
 }: {
   id: string;
-  eyebrow: string;
+  eyebrow?: string;
   title: ReactNode;
   description?: string;
   className?: string;
@@ -26,7 +26,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "relative py-20 before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-border/60 before:to-transparent border-primary",
+        "relative py-20 before:absolute before:inset-x-0 before:top-0 before:h-[4px] before:bg-gradient-to-r before:from-transparent before:via-border/60 before:to-transparent border-primary",
         className,
       )}
     >

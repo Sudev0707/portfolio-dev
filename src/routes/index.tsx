@@ -7,6 +7,7 @@ import { Skills } from "@/components/portfolio/Skills";
 import { Projects } from "@/components/portfolio/Projects";
 import { Experience } from "@/components/portfolio/Experience";
 import { HowItWorks } from "@/components/portfolio/HowItWorks";
+import { WorkPhilosophy } from "@/components/portfolio/WorkPhilosophy";
 import { Contact } from "@/components/portfolio/Contact";
 
 export const Route = createFileRoute("/")({
@@ -37,9 +38,10 @@ function Index() {
       <About />  
       <Skills />
       <Projects />
-      <BentoGrid />
-      <Experience />
+      {/* <BentoGrid /> */}
+      {/* <Experience /> */}
       <HowItWorks />
+      <WorkPhilosophy />
       <Contact />
     </main>
   );

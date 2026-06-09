@@ -1,9 +1,14 @@
 "use client";
 
+import { Link } from "@tanstack/react-router";
+import { ArrowRight, Calendar } from "lucide-react";
 import { motion } from "motion/react";
 import profileImg from "@/assets/image/profileImg.png";
+import signatureImg from "@/assets/image/signature.png";
+import { CAL_BOOKING_URL, profileFacts, socialLinks } from "@/lib/profile";
 import { Section } from "./Section";
 import {
+  fadeUp,
   slideInRight,
   staggerContainer,
   staggerItem,
@@ -60,12 +65,37 @@ export function About() {
             </motion.div>
           ))}
 
-          <div className="grid gap-6 border-t border-border pt-8 sm:grid-cols-3">
-            {[
-              { label: "Currently", value: "Software Developer" },
-              { label: "Location", value: "India" },
-              { label: "Focus", value: "Web, Mobile & AI Applications" },
-            ].map((item) => (
+          <motion.div
+            className="flex flex-wrap items-center gap-4 pt-2"
+            variants={staggerItem}
+          >
+            <div className="flex items-center gap-2">
+              {socialLinks.map(({ label, href, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                  aria-label={label}
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:border-primary/60 hover:text-foreground"
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
+            <a
+              href={CAL_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-transform duration-200 hover:scale-[1.02]"
+            >
+              <Calendar className="h-4 w-4" />
+              Book a free call
+            </a>
+          </motion.div>
+
+          {/* <div className="grid gap-6 border-t border-border pt-8 sm:grid-cols-3">
+            {profileFacts.map((item) => (
               <motion.div key={item.label} variants={staggerItem}>
                 <div className="text-xs uppercase tracking-wider text-muted-foreground">
                   {item.label}
@@ -75,7 +105,27 @@ export function About() {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </div> */}
+
+          <motion.div
+            className="mt-12 flex justify-between"
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+            variants={fadeUp}
+          >
+            <img src={signatureImg} alt="Signature" className="w-45 h-25 object-contain" />
+            <div className="flex items-end gap-2">
+              <Link
+                to="/about"
+                className="group inline-flex rounded-full items-center gap-2  border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary/60 hover:text-primary"
+              >
+                Know more about me
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </div>
+
+          </motion.div>
         </motion.div>
 
         <motion.div
