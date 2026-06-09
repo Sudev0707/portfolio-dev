@@ -241,7 +241,7 @@ export function AboutDetail() {
                     {job.role}
                   </span>
                 </div>
-                <ul className="mt-6 space-y-3">
+                {/* <ul className="mt-6 space-y-3">
                   {job.highlights.map((highlight) => (
                     <li
                       key={highlight}
@@ -251,12 +251,12 @@ export function AboutDetail() {
                       {highlight}
                     </li>
                   ))}
-                </ul>
-                <div className="mt-6 flex flex-wrap gap-2">
+                </ul> */}
+                {/* <div className="mt-6 flex flex-wrap gap-2">
                   {job.tags.map((tag) => (
                     <TagPill key={tag}>{tag}</TagPill>
                   ))}
-                </div>
+                </div> */}
               </article>
             ))}
           </div>

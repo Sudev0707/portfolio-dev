@@ -3,8 +3,8 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar } from "lucide-react";
 import { motion } from "motion/react";
-import profileImg from "@/assets/image/profileImg.png";
 import signatureImg from "@/assets/image/signature.png";
+import { ProfileCard } from "./ProfileCard";
 import { CAL_BOOKING_URL, profileFacts, socialLinks } from "@/lib/profile";
 import { Section } from "./Section";
 import {
@@ -140,11 +140,7 @@ export function About() {
           variants={slideInRight}
         >
           <div className="flex flex-col items-center">
-            <img
-              src={profileImg}
-              alt="Profile"
-              className="aspect-[3/4] w-full max-w-sm rounded-2xl border border-border object-cover shadow-lg"
-            />
+            <ProfileCard />
             <img
               src={signatureImg}
               alt="Signature"
