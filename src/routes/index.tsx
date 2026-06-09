@@ -9,6 +9,7 @@ import { Experience } from "@/components/portfolio/Experience";
 import { HowItWorks } from "@/components/portfolio/HowItWorks";
 import { WorkPhilosophy } from "@/components/portfolio/WorkPhilosophy";
 import { Contact } from "@/components/portfolio/Contact";
+import { SITE_OG_IMAGE } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,6 +26,8 @@ export const Route = createFileRoute("/")({
         content:
           "Independent software engineer building reliable, fast, and well-crafted products for the modern web.",
       },
+      { property: "og:image", content: SITE_OG_IMAGE },
+      { name: "twitter:image", content: SITE_OG_IMAGE },
     ],
   }),
   component: Index,

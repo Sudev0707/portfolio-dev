@@ -86,9 +86,9 @@ export function Contact() {
         viewport={viewport}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <div className="flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
+        <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
           <span>© 2026 Sudev Majhi. Crafted with care.</span>
-          <span className="font-mono">v1.0 · Built with TanStack Start</span>
+          {/* <span className="font-mono">v1.0 · Built with TanStack Start</span> */}
         </div>
       </motion.footer>
     </section>

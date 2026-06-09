@@ -103,9 +103,9 @@ function GtaBackground() {
       ))}
 
       {/* Light sweep */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* <div className="absolute inset-0 overflow-hidden">
         <div className="gta-light-sweep absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-      </div>
+      </div> */}
 
       {/* Radial depth + grain */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,oklch(0.62_0.14_162/0.1),transparent_65%)]" />
@@ -116,7 +116,7 @@ function GtaBackground() {
 
       {/* Horizontal HUD line */}
       <motion.div
-        className="absolute inset-x-0 top-[38%] h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"
+        className="absolute inset-x-0 top-[50%] h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"
         initial={{ scaleX: 0, opacity: 0 }}
         animate={{ scaleX: 1, opacity: 1 }}
         transition={{ duration: 1.2, delay: 2.8, ease: [0.22, 1, 0.36, 1] }}

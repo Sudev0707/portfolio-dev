@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Linkedin, Minus, Plus, } from "lucide-react";
+import { Linkedin, Minus, Plus } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Section } from "./Section";
 import profileImg from "@/assets/image/profileImg.png";
@@ -135,11 +135,36 @@ function LinkedInCard() {
       viewport={viewport}
       variants={slideInRight}
     >
-      <img
-        src={profileImg}
-        alt="Sudev Majhi"
-        className="size-12 rounded-full border border-border object-cover grayscale"
-      />
+      <div className="flex items-center gap-2">
+        <img
+          src={profileImg}
+          alt="Sudev Majhi"
+          className="size-12 rounded-full border border-border object-cover grayscale"
+        />
+        <div className="flex items-center gap-1">
+          <p className="text-lg font-bricolage font-me text-foreground">Sudev Majhi</p>
+          <svg
+            className="size-[18px] shrink-0"
+            viewBox="0 0 24 24"
+            role="img"
+            aria-label="Verified"
+          >
+            <path
+              d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"
+              fill="#1D9BF0"
+            />
+            <path
+              d="m9 12 2 2 4-4"
+              fill="none"
+              stroke="#0a0a0a"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+
       <h3 className="mt-5 text-lg font-semibold leading-snug tracking-tight md:text-xl">
         <span className="text-muted-foreground">Curious about my work? </span>
         <span className="text-foreground">Find me on LinkedIn</span>
@@ -166,7 +191,7 @@ export function WorkPhilosophy() {
 
   return (
     <Section id="philosophy" eyebrow="Philosophy" title={<></>} className="relative">
-      <div className="mx-auto max-w-6xl px-12  py-0">
+      <div className="mx-auto max-w-6xl py-0 md:px-12">
         <div className="grid items-start gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
           <div>
             <motion.h2

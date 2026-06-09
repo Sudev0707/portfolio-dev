@@ -108,13 +108,17 @@ export function About() {
           </div> */}
 
           <motion.div
-            className="mt-12 flex justify-between"
+            className="mt-12 flex justify-center md:justify-between"
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
             variants={fadeUp}
           >
-            <img src={signatureImg} alt="Signature" className="w-45 h-25 object-contain" />
+            <img
+              src={signatureImg}
+              alt="Signature"
+              className="hidden h-25 w-45 object-contain md:block"
+            />
             <div className="flex items-center gap-2">
               <Link
                 to="/about"
@@ -135,11 +139,18 @@ export function About() {
           viewport={viewport}
           variants={slideInRight}
         >
-          <img
-            src={profileImg}
-            alt="Profile"
-            className="aspect-[3/4] w-full max-w-sm rounded-2xl border border-border object-cover shadow-lg"
-          />
+          <div className="flex flex-col items-center">
+            <img
+              src={profileImg}
+              alt="Profile"
+              className="aspect-[3/4] w-full max-w-sm rounded-2xl border border-border object-cover shadow-lg"
+            />
+            <img
+              src={signatureImg}
+              alt="Signature"
+              className="mt-4 h-25 w-45 object-contain md:hidden"
+            />
+          </div>
         </motion.div>
       </div>
     </Section>

@@ -12,6 +12,7 @@ import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { MouseTrail } from "@/components/MouseTrail";
+import { SITE_OG_IMAGE, SITE_URL } from "@/lib/site";
 
 
 function NotFoundComponent() {
@@ -83,10 +84,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "sudev.dev" },
       { property: "og:description", content: "Personal portfolio." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:image", content: SITE_OG_IMAGE },
+      {
+        property: "og:image:alt",
+        content: "Sudev Majhi — Software Engineer at sudev.dev",
+      },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@sudev" },
+      { name: "twitter:image", content: SITE_OG_IMAGE },
     ],
     links: [
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
