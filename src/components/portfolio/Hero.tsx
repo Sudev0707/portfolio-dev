@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "motion/react";
 
 const stats = [
@@ -354,7 +355,14 @@ export function Hero() {
             custom={0.2}
             variants={fadeUp}
           >
-            I&apos;m <span className="text-primary font-bricolage text-2xl font-bold">Sudev Majhi</span> — a mobile and full-stack engineer focused on
+            I&apos;m{" "}
+            <Link
+  to="/about"
+  className="inline-block text-primary font-bricolage text-2xl font-bold transition-all duration-300 hover:scale-125 "
+>
+  Sudev Majhi
+</Link>
+            — a mobile and full-stack engineer focused on
             native-quality experiences, performance, and the interaction details
             that make products feel inevitable.
           </motion.p>

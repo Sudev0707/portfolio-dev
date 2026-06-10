@@ -68,12 +68,16 @@ function SkillCard({ name, icon: Icon, color }: Skill) {
   return (
     <figure
       className={cn(
-        "flex w-44 shrink-0 items-center gap-3 rounded-lg border border-border bg-card px-4 py-3",
+        " shrink-0 justify-center items-center gap-3 rounded-lg border border-border bg-card p-1 px-2",
         "transition-colors hover:border-primary/40 hover:bg-card/80"
       )}
     >
-      <Icon className="size-5 shrink-0" style={{ color }} aria-hidden />
-      <figcaption className="text-sm font-medium text-foreground">{name}</figcaption>
+      <div className="flex flex-col items-center justify-center gap-2">
+        <div className="flex items-center justify-center bg-black/30 p-2 rounded-lg">
+          <Icon className="size-16 shrink-0" style={{ color }} aria-hidden />
+        </div>
+        <figcaption className="text-sm font-medium text-muted-foreground">{name}</figcaption>
+      </div>
     </figure>
   );
 }

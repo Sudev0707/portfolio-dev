@@ -44,11 +44,11 @@ export const socialLinks: {
     href: "mailto:hello@sudev.dev",
     icon: Mail,
   },
-  {
-    label: "Book a call",
-    href: CAL_BOOKING_URL,
-    icon: Calendar,
-  },
+  // {
+  //   label: "Book a call",
+  //   href: CAL_BOOKING_URL,
+  //   icon: Calendar,
+  // },
 ];
 
 export const contactInfoLeft: {

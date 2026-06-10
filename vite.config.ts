@@ -16,6 +16,7 @@ export default defineConfig(({ mode }) => {
   );
 
   return {
+    assetsInclude: ["**/*.glb"],
     define: envDefine,
     resolve: {
       alias: {

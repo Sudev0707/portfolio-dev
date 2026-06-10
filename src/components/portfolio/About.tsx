@@ -4,6 +4,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar } from "lucide-react";
 import { motion } from "motion/react";
 import signatureImg from "@/assets/image/signature.png";
+import { LinkPreview } from "@/components/ui/link-preview";
 import { ProfileCard } from "./ProfileCard";
 import { CAL_BOOKING_URL, profileFacts, socialLinks } from "@/lib/profile";
 import { Section } from "./Section";
@@ -70,18 +71,37 @@ export function About() {
             variants={staggerItem}
           >
             <div className="flex items-center gap-2">
-              {socialLinks.map(({ label, href, icon: Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target={href.startsWith("mailto:") ? undefined : "_blank"}
-                  rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-                  aria-label={label}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:border-primary/60 hover:text-foreground"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
+              {socialLinks.map(({ label, href, icon: Icon }) => {
+                const linkClassName =
+                  "inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:border-primary/60 hover:text-foreground";
+                const isExternal = !href.startsWith("mailto:");
+
+                if (!isExternal) {
+                  return (
+                    <a
+                      key={label}
+                      href={href}
+                      aria-label={label}
+                      className={linkClassName}
+                    >
+                      <Icon className="h-4 w-4" />
+                    </a>
+                  );
+                }
+
+                return (
+                  <LinkPreview
+                    key={label}
+                    url={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className={linkClassName}
+                  >
+                    <Icon className="h-4 w-4" />
+                  </LinkPreview>
+                );
+              })}
             </div>
             <a
               href={CAL_BOOKING_URL}
@@ -122,7 +142,7 @@ export function About() {
             <div className="flex items-center gap-2">
               <Link
                 to="/about"
-                className="group inline-flex rounded-full items-center gap-2  border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary/60 hover:text-primary"
+                className="group inline-flex rounded-full items-center gap-2 border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary/60 hover:text-primary"
               >
                 Know more about me
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
