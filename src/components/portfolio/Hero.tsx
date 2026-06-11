@@ -388,7 +388,7 @@ export function Hero() {
           >
             <a
               href="#projects"
-              className="group relative inline-flex items-center gap-2 overflow-hidden border border-primary/60 bg-primary/90 px-6 py-3 font-gta text-sm tracking-[0.15em] text-primary-foreground shadow-[0_0_40px_oklch(0.62_0.14_162/0.3)] transition-transform duration-300 hover:scale-[1.02]"
+              className="group relative hidden items-center gap-2 overflow-hidden border border-primary/60 bg-primary/90 px-6 py-3 font-gta text-sm tracking-[0.15em] text-primary-foreground shadow-[0_0_40px_oklch(0.62_0.14_162/0.3)] transition-transform duration-300 hover:scale-[1.02] md:inline-flex"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
               <span className="relative">VIEW WORK</span>
