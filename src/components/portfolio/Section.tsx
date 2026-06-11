@@ -16,7 +16,7 @@ export function Section({
 }: {
   id: string;
   eyebrow?: string;
-  title: ReactNode;
+  title?: ReactNode;
   description?: string;
   className?: string;
   centered?: boolean;

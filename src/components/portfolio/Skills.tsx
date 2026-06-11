@@ -84,12 +84,14 @@ function SkillCard({ name, icon: Icon, color }: Skill) {
 
 export function Skills() {
   return (
-    <Section
+    <section
       id="skills"
-      eyebrow="Skills"
-      title={<>Tools I reach for, daily.</>}
+      className="border-t border-border/60 pt-28 pb-28 max-w-6xl px-6 mx-auto"
+      // eyebrow="Skills"
+      // title={<>Tools I reach for, daily.</>}
     >
       <div className="relative flex w-full flex-col items-center justify-center gap-3 overflow-hidden">
+        <h2 className="text-2xl font-bricolage font-bold text-primary mb-4">Tools I reach for, daily.</h2>
         <Marquee pauseOnHover className="[--duration:35s] [--gap:0.75rem]">
           {firstRow.map((skill) => (
             <SkillCard key={skill.name} {...skill} />
@@ -103,6 +105,6 @@ export function Skills() {
         <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background to-transparent" />
       </div>
-    </Section>
+    </section>
   );
 }

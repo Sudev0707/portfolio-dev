@@ -38,7 +38,7 @@ function GtaBackground() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
       {/* Ken Burns cityscape silhouettes */}
-      <motion.div
+      {/* <motion.div
         className="absolute inset-0"
         initial={{ scale: 1.15 }}
         animate={{ scale: 1 }}
@@ -61,12 +61,12 @@ function GtaBackground() {
         >
           <path d="M0,120 L80,100 L160,130 L240,80 L320,110 L400,70 L480,100 L560,60 L640,90 L720,50 L800,85 L880,55 L960,95 L1040,65 L1120,100 L1200,70 L1280,105 L1360,75 L1440,110 L1440,200 L0,200 Z" />
         </svg>
-      </motion.div>
+      </motion.div> */}
 
       {/* Perspective grid floor */}
-      <div className="absolute inset-x-0 bottom-0 h-[55%] overflow-hidden opacity-40">
+      {/* <div className="absolute inset-x-0 bottom-0 h-[55%] overflow-hidden opacity-40">
         <div className="gta-perspective-grid absolute inset-0" />
-      </div>
+      </div> */}
 
       {/* Ambient glow orbs */}
       <motion.div
@@ -116,12 +116,12 @@ function GtaBackground() {
       <div className="gta-scanlines absolute inset-0 opacity-30" />
 
       {/* Horizontal HUD line */}
-      <motion.div
+      {/* <motion.div
         className="absolute inset-x-0 top-[50%] h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"
         initial={{ scaleX: 0, opacity: 0 }}
         animate={{ scaleX: 1, opacity: 1 }}
         transition={{ duration: 1.2, delay: 2.8, ease: [0.22, 1, 0.36, 1] }}
-      />
+      /> */}
     </div>
   );
 }
@@ -235,7 +235,7 @@ export function Hero() {
       ))}
 
       {/* Side HUD — mission briefing panel */}
-      <motion.aside
+      {/* <motion.aside
         className="pointer-events-none absolute right-6 top-1/2 z-10 hidden -translate-y-1/2 lg:block"
         initial={{ opacity: 0, x: 40 }}
         animate={{ opacity: introDone ? 1 : 0, x: introDone ? 0 : 40 }}
@@ -260,7 +260,7 @@ export function Hero() {
             ))}
           </div>
         </div>
-      </motion.aside>
+      </motion.aside> */}
 
       <div className="relative z-20 mx-auto w-full max-w-6xl px-6 py-20">
         <div className="max-w-4xl">
@@ -357,11 +357,11 @@ export function Hero() {
           >
             I&apos;m{" "}
             <Link
-  to="/about"
-  className="inline-block text-primary font-bricolage text-2xl font-bold transition-all duration-300 hover:scale-125 "
->
-  Sudev Majhi
-</Link>
+              to="/about"
+              className="inline-block text-primary font-bricolage text-2xl font-bold transition-all duration-300 hover:scale-125 "
+            >
+              Sudev Majhi
+            </Link>
             — a mobile and full-stack engineer focused on
             native-quality experiences, performance, and the interaction details
             that make products feel inevitable.
@@ -446,7 +446,7 @@ export function Hero() {
       </motion.div>
 
       {/* Coordinates HUD — bottom left */}
-      <motion.div
+      {/* <motion.div
         className="pointer-events-none absolute bottom-8 left-6 z-20 hidden font-mono text-[10px] text-muted-foreground/60 sm:block"
         initial={{ opacity: 0 }}
         animate={{ opacity: introDone ? 0.6 : 0 }}
@@ -455,7 +455,7 @@ export function Hero() {
       >
         <span className="text-primary/80">LAT</span> 22.5726° N ·{" "}
         <span className="text-primary/80">LNG</span> 88.3639° E
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }
