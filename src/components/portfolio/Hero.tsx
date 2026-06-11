@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "motion/react";
+import { DeviceMockupSlider } from "@/components/portfolio/DeviceMockupSlider";
 
 const stats = [
   ["6+", "Years shipping"],
@@ -263,7 +264,8 @@ export function Hero() {
       </motion.aside> */}
 
       <div className="relative z-20 mx-auto w-full max-w-6xl px-6 py-20">
-        <div className="max-w-4xl">
+        <div className="flex flex-col items-center justify-between gap-12 lg:flex-row lg:items-center lg:gap-16">
+        <div className="w-full max-w-4xl flex-1">
           {/* Location subtitle — GTA style */}
           <motion.div
             custom={0.05}
@@ -368,6 +370,16 @@ export function Hero() {
           </motion.p>
 
           <motion.div
+            className="my-8 flex items-center justify-center lg:hidden"
+            initial="hidden"
+            animate={introDone ? "visible" : "hidden"}
+            custom={0.28}
+            variants={fadeUp}
+          >
+            <DeviceMockupSlider visible={introDone} />
+          </motion.div>
+
+          <motion.div
             className="mt-10 flex flex-wrap items-center gap-4"
             initial="hidden"
             animate={introDone ? "visible" : "hidden"}
@@ -384,12 +396,12 @@ export function Hero() {
                 →
               </span>
             </a>
-            <a
+            {/* <a
               href="#contact"
               className="inline-flex items-center gap-2 border border-border/80 bg-black/30 px-6 py-3 font-gta text-sm tracking-[0.15em] text-foreground backdrop-blur-sm transition-colors hover:border-primary/50 hover:text-primary"
             >
               CONTACT
-            </a>
+            </a> */}
           </motion.div>
 
           {/* Stats — GTA HUD bars */}
@@ -424,6 +436,11 @@ export function Hero() {
               </motion.div>
             ))}
           </motion.dl> */}
+        </div>
+
+        <div className="hidden flex-shrink-0 items-center justify-center lg:flex">
+          <DeviceMockupSlider visible={introDone} />
+        </div>
         </div>
       </div>
 
