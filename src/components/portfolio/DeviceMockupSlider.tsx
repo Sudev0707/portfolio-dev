@@ -783,22 +783,18 @@ export const DeviceMockupSlider = memo(function DeviceMockupSlider({
           }}
         />
 
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={`${slide.id}-screen`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            style={{
-              width: "100%",
-              height: "100%",
-              borderRadius: "2.55rem",
-              background: slide.screenBg,
-              overflow: "hidden",
-              position: "relative",
-            }}
-          >
+        <motion.div
+          animate={{ backgroundColor: slide.screenBg }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "2.55rem",
+            background: slide.screenBg,
+            overflow: "hidden",
+            position: "relative",
+          }}
+        >
             <div
               style={{
                 display: "flex",
@@ -861,27 +857,29 @@ export const DeviceMockupSlider = memo(function DeviceMockupSlider({
               </div>
             </div>
 
-            <div style={{ position: "relative", zIndex: 2 }}>
-              <AnimatePresence mode="wait">
+            <div style={{ position: "relative", zIndex: 2, minHeight: 360 }}>
+              <AnimatePresence initial={false}>
                 <motion.div
                   key={`${slide.id}-content`}
-                  initial={{ opacity: 0, y: 14 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -14 }}
-                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ position: "absolute", inset: 0 }}
                 >
                   <Screen color={slide.color} />
                 </motion.div>
               </AnimatePresence>
             </div>
 
-            <div
+            <motion.div
+              animate={{ backgroundColor: `${slide.screenBg}f0` }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 position: "absolute",
                 bottom: 0,
                 left: 0,
                 right: 0,
-                background: `${slide.screenBg}f0`,
                 backdropFilter: "blur(20px)",
                 borderTop: "1px solid rgba(255,255,255,0.06)",
                 display: "flex",
@@ -892,19 +890,22 @@ export const DeviceMockupSlider = memo(function DeviceMockupSlider({
               }}
             >
               {navIcons.map((icon, i) => (
-                <div
+                <motion.div
                   key={i}
+                  animate={{
+                    color: i === 0 ? slide.color : "rgba(255,255,255,0.22)",
+                    backgroundColor: i === 0 ? `${slide.color}18` : "transparent",
+                  }}
+                  transition={{ duration: 0.35 }}
                   style={{
                     padding: "6px 9px",
                     borderRadius: 9,
-                    color: i === 0 ? slide.color : "rgba(255,255,255,0.22)",
-                    background: i === 0 ? `${slide.color}18` : "transparent",
                   }}
                 >
                   {icon}
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             <div
               className="hidden md:block"
@@ -920,8 +921,7 @@ export const DeviceMockupSlider = memo(function DeviceMockupSlider({
                 zIndex: 6,
               }}
             />
-          </motion.div>
-        </AnimatePresence>
+        </motion.div>
       </div>
 
       <div className="relative flex justify-center gap-1" style={{ marginTop: 24, zIndex: 1 }}>
