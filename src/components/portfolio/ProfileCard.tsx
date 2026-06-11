@@ -14,7 +14,7 @@ export function ProfileCard({ className }: ProfileCardProps) {
   return (
     <div
       className={cn(
-        "w-full max-w-sm overflow-hidden rounded-[2rem] border border-border bg-card p-3 shadow-lg",
+        "w-full max-w-sm overflow-hidden rounded-[2rem] border border-border bg-card p-2 shadow-lg",
         className,
       )}
     >
@@ -53,7 +53,7 @@ export function ProfileCard({ className }: ProfileCardProps) {
           href={linkedInHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex shrink-0 items-center rounded-full bg-foreground px-3 py-2 text-sm font-medium text-background transition-[transform,background-color,color] duration-300 ease-in-out hover:scale-[1.02] hover:bg-[#0A66C2] hover:text-white"
+          className="inline-flex shrink-0 items-center rounded-full bg-foreground px-2 py-1 text-sm font-medium text-background transition-[transform,background-color,color] duration-300 ease-in-out hover:scale-[1.02] hover:bg-[#0A66C2] hover:text-white"
         >
           + Connect
         </a>
