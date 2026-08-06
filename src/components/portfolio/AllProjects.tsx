@@ -12,7 +12,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       variants={staggerItem}
       className="group flex flex-col overflow-hidden rounded-3xl border border-border/60 bg-card transition-colors hover:border-border/80"
     >
-      <div className="relative h-[240px] overflow-hidden p-1 sm:h-[280px]">
+      <div className="relative aspect-[16/10] overflow-hidden p-1">
         <div className="h-full overflow-hidden rounded-2xl">
           <ProjectThumbnail project={project} />
         </div>

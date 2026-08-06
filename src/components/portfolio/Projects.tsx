@@ -194,7 +194,7 @@ export function Projects() {
         {projects.map((project, index) => (
           <article key={project.name} className="space-y-8">
             <div className="overflow-hidden rounded-3xl border border-border/60 bg-card p-1">
-              <div className="relative h-[308px] overflow-hidden rounded-2xl">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
                 <ProjectThumbnail project={project} />
               </div>
             </div>
