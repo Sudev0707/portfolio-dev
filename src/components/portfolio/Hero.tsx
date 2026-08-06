@@ -132,7 +132,7 @@ function GtaIntro({ phase }: { phase: IntroPhase }) {
     <AnimatePresence>
       {phase !== "done" && (
         <motion.div
-          className="absolute inset-0 z-50 flex items-center justify-center bg-black"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black"
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
         >
