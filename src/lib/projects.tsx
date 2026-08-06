@@ -67,12 +67,12 @@ export function ProjectThumbnail({ project }: { project: Project }) {
             className="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/55 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-white shadow-sm backdrop-blur-md transition-colors hover:bg-black/75"
             onClick={(e) => e.stopPropagation()}
           >
-            View live
+            Visit
             <ArrowUpRight className="size-3.5" aria-hidden />
           </a>
         ) : (
           <span className="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-black/40 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-white/70 backdrop-blur-md">
-            View live
+            Visit
             <ArrowUpRight className="size-3.5" aria-hidden />
           </span>
         ))}
