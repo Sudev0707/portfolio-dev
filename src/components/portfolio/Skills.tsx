@@ -67,16 +67,15 @@ const secondRow = skills.slice(midpoint);
 function SkillCard({ name, icon: Icon, color }: Skill) {
   return (
     <figure
+      aria-label={name}
+      title={name}
       className={cn(
-        " shrink-0 justify-center items-center gap-3 rounded-lg border border-border bg-card p-1 px-2",
+        "shrink-0 rounded-md border border-border bg-card p-1.5 md:p-2",
         "transition-colors hover:border-primary/40 hover:bg-card/80"
       )}
     >
-      <div className="flex flex-col items-center justify-center gap-2">
-        <div className="flex items-center justify-center bg-black/30 p-2 rounded-lg">
-          <Icon className="size-16 shrink-0" style={{ color }} aria-hidden />
-        </div>
-        <figcaption className="text-sm font-medium text-muted-foreground">{name}</figcaption>
+      <div className="flex items-center justify-center rounded-md bg-black/30 p-1.5 md:p-2">
+        <Icon className="size-7 shrink-0 md:size-9" style={{ color }} aria-hidden />
       </div>
     </figure>
   );

@@ -167,7 +167,7 @@ export function Projects() {
                   : "border-border/40 opacity-55"
                   }`}
               >
-                <div className="rounded-3xl overflow-hidden">
+                <div className="h-full overflow-hidden rounded-3xl">
                   {project.thumbnail}
                 </div>
 

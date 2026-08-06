@@ -15,6 +15,10 @@ import {
   SiRust,
   SiTypescript,
 } from "react-icons/si";
+import linkrepoIcon from "@/assets/image/linkrepo-icon.png";
+import linkrepoThumbnail from "@/assets/image/linkrepo-thumbnail.png";
+import mockpixelIcon from "@/assets/image/mockpixel-icon.png";
+import mockpixelThumbnail from "@/assets/image/mockpixel-thumbnail.png";
 
 export type Project = {
   name: string;
@@ -45,6 +49,70 @@ export function ProjectAppIcon({
 }
 
 export const projects: Project[] = [
+  {
+    name: "LinkRepo",
+    description:
+      "Save, organize, categorize and revisit your important links anytime, anywhere — all your links in one smart place.",
+    features: [
+      "Save any link with one tap",
+      "Organize into categories and favorites",
+      "Quick search across your entire link library",
+    ],
+    tags: [
+      { label: "React", icon: <SiReact className="size-3" /> },
+      { label: "TypeScript", icon: <SiTypescript className="size-3" /> },
+      { label: "Mobile" },
+    ],
+    year: "2026",
+    href: "#",
+    icon: (
+      <img
+        src={linkrepoIcon}
+        alt=""
+        aria-hidden
+        className="size-10 shrink-0 rounded-xl border border-border/60 object-cover md:size-12"
+      />
+    ),
+    thumbnail: (
+      <img
+        src={linkrepoThumbnail}
+        alt="LinkRepo — All Your Links. One Smart Place."
+        className="h-full w-full object-cover"
+      />
+    ),
+  },
+  {
+    name: "MockPixel",
+    description:
+      "Create stunning App Store screenshots and device mockups — the simple & powerful app for marketers and indie makers to design beautiful visuals from your phone.",
+    features: [
+      "50+ premium frames for iPhone, Android, tablet & more",
+      "Solid colors, gradients & clean scenes for backgrounds",
+      "Crop, zoom, resize & export PNG for store listings",
+    ],
+    tags: [
+      { label: "React", icon: <SiReact className="size-3" /> },
+      { label: "TypeScript", icon: <SiTypescript className="size-3" /> },
+      { label: "Mobile" },
+    ],
+    year: "2026",
+    href: "#",
+    icon: (
+      <img
+        src={mockpixelIcon}
+        alt=""
+        aria-hidden
+        className="size-10 shrink-0 rounded-xl border border-border/60 object-cover md:size-12"
+      />
+    ),
+    thumbnail: (
+      <img
+        src={mockpixelThumbnail}
+        alt="MockPixel — Create Stunning App Store Screenshots & Device Mockups"
+        className="h-full w-full object-cover"
+      />
+    ),
+  },
   {
     name: "Ledger OS",
     description:
