@@ -43,16 +43,16 @@ export function Contact() {
             variants={staggerContainer}
           >
             <motion.a
-              href="mailto:hello@sudev.dev"
+              href="mailto:sudev1997@gmail.com"
               className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-transform duration-200 hover:scale-[1.02]"
               variants={scaleIn}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.98 }}
             >
-              hello@sudev.dev
+              sudev1997@gmail.com
             </motion.a>
             <motion.a
-              href="#"
+              href="https://cal.com/sudev-y6seey/15min"
               className="inline-flex items-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-primary/60"
               variants={scaleIn}
               whileHover={{ scale: 1.02 }}
@@ -68,7 +68,9 @@ export function Contact() {
             {["GitHub", "LinkedIn", "X / Twitter", "Read.cv"].map((label) => (
               <motion.a
                 key={label}
-                href="#"
+                href={`https://${label.toLowerCase().replace(" / ", ".com/")}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="transition-colors hover:text-foreground"
                 variants={staggerItem}
                 whileHover={{ y: -2 }}

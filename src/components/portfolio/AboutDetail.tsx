@@ -25,7 +25,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function EmailCopyButton() {
   const [copied, setCopied] = useState(false);
-  const email = "hello@sudev.dev";
+  const email = "sudev1997@gmail.com";
 
   const copy = async () => {
     await navigator.clipboard.writeText(email);

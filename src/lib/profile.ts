@@ -41,7 +41,7 @@ export const socialLinks: {
   },
   {
     label: "Email",
-    href: "mailto:hello@sudev.dev",
+    href: "mailto:sudev1997@gmail.com",
     icon: Mail,
   },
   // {
@@ -100,8 +100,8 @@ export const contactInfoRight: {
   {
     id: "email",
     icon: Mail,
-    label: "hello@sudev.dev",
-    href: "mailto:hello@sudev.dev",
+    label: "sudev1997@gmail.com",
+    href: "mailto:sudev1997@gmail.com",
   },
   {
     id: "languages",

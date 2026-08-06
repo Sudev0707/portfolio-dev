@@ -141,7 +141,7 @@ function DeviceStatusBar({ time }: { time: string }) {
 function ProfileScreen({ color }: ScreenProps) {
   const role = contactInfoLeft.find((item) => item.id === "role")?.label ?? "Software Developer";
   const location = contactInfoLeft.find((item) => item.id === "location")?.label ?? "Kolkata, India";
-  const email = contactInfoRight.find((item) => item.id === "email")?.label ?? "hello@sudev.dev";
+  const email = contactInfoRight.find((item) => item.id === "email")?.label ?? "sudev1997@gmail.com";
   const status = contactInfoRight.find((item) => item.id === "status")?.label ?? "Open to collaborations";
   const skills = workExperience[0]?.tags.slice(0, 4) ?? ["React", "React Native", "TypeScript", "Node.js"];
 
