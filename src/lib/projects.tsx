@@ -27,6 +27,8 @@ export type Project = {
   tags: { label: string; icon?: ReactNode }[];
   year: string;
   href: string;
+  /** Live app / store URL — shows a "View live" badge on the thumbnail when set */
+  liveUrl?: string;
   icon: ReactNode;
   thumbnail: ReactNode;
 };
@@ -48,6 +50,36 @@ export function ProjectAppIcon({
   );
 }
 
+export function ProjectThumbnail({ project }: { project: Project }) {
+  const liveUrl = project.liveUrl?.trim() ?? "";
+  const showBadge = project.liveUrl !== undefined;
+  const isLive = /^https?:\/\//.test(liveUrl);
+
+  return (
+    <div className="relative h-full w-full">
+      {project.thumbnail}
+      {showBadge &&
+        (isLive ? (
+          <a
+            href={liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/55 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-white shadow-sm backdrop-blur-md transition-colors hover:bg-black/75"
+            onClick={(e) => e.stopPropagation()}
+          >
+            View live
+            <ArrowUpRight className="size-3.5" aria-hidden />
+          </a>
+        ) : (
+          <span className="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-black/40 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-white/70 backdrop-blur-md">
+            View live
+            <ArrowUpRight className="size-3.5" aria-hidden />
+          </span>
+        ))}
+    </div>
+  );
+}
+
 export const projects: Project[] = [
   {
     name: "LinkRepo",
@@ -65,6 +97,7 @@ export const projects: Project[] = [
     ],
     year: "2026",
     href: "#",
+    liveUrl: "https://linkdrop-app-ten.vercel.app/",
     icon: (
       <img
         src={linkrepoIcon}
@@ -97,6 +130,7 @@ export const projects: Project[] = [
     ],
     year: "2026",
     href: "#",
+    liveUrl: "https://mockpixel.vercel.app/",
     icon: (
       <img
         src={mockpixelIcon}

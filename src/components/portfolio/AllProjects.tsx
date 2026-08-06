@@ -3,7 +3,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
-import { projects, type Project } from "@/lib/projects";
+import { projects, ProjectThumbnail, type Project } from "@/lib/projects";
 import { fadeUp, staggerContainer, staggerItem } from "./motion";
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
@@ -12,8 +12,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       variants={staggerItem}
       className="group flex flex-col overflow-hidden rounded-3xl border border-border/60 bg-card transition-colors hover:border-border/80"
     >
-      <div className="h-[240px] overflow-hidden p-1 sm:h-[280px]">
-        <div className="h-full overflow-hidden rounded-2xl">{project.thumbnail}</div>
+      <div className="relative h-[240px] overflow-hidden p-1 sm:h-[280px]">
+        <div className="h-full overflow-hidden rounded-2xl">
+          <ProjectThumbnail project={project} />
+        </div>
       </div>
 
       <div className="flex flex-1 flex-col p-6 pt-5">

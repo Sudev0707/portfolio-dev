@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
-import { projects, type Project } from "@/lib/projects";
+import { projects, ProjectThumbnail, type Project } from "@/lib/projects";
 import { Section } from "./Section";
 import { ease } from "./motion";
 
@@ -167,8 +167,8 @@ export function Projects() {
                   : "border-border/40 opacity-55"
                   }`}
               >
-                <div className="h-full overflow-hidden rounded-3xl">
-                  {project.thumbnail}
+                <div className="relative h-full overflow-hidden rounded-3xl">
+                  <ProjectThumbnail project={project} />
                 </div>
 
               </div>
@@ -194,8 +194,8 @@ export function Projects() {
         {projects.map((project, index) => (
           <article key={project.name} className="space-y-8">
             <div className="overflow-hidden rounded-3xl border border-border/60 bg-card p-1">
-              <div className="h-[308px] overflow-hidden rounded-2xl">
-                {project.thumbnail}
+              <div className="relative h-[308px] overflow-hidden rounded-2xl">
+                <ProjectThumbnail project={project} />
               </div>
             </div>
             <ProjectDetails
