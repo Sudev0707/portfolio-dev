@@ -57,7 +57,7 @@ export function Contact() {
               variants={scaleIn}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-            >
+            >   
               Schedule a call
             </motion.a>
           </motion.div>
@@ -65,10 +65,17 @@ export function Contact() {
             className="mt-16 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground"
             variants={staggerContainer}
           >
-            {["GitHub", "LinkedIn", "X / Twitter", "Read.cv"].map((label) => (
+            {[
+              { label: "GitHub", href: "https://github.com/Sudev0707" },
+              {
+                label: "LinkedIn",
+                href: "https://linkedin.com/in/sudevmajhi-dev",
+              },
+              { label: "X / Twitter", href: "https://x.com/shipwithsudev" },
+            ].map(({ label, href }) => (
               <motion.a
                 key={label}
-                href={`https://${label.toLowerCase().replace(" / ", ".com/")}`}
+                href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-foreground"

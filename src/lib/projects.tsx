@@ -55,7 +55,7 @@ export function ProjectThumbnail({ project }: { project: Project }) {
     <div className="relative h-full w-full">
       {project.thumbnail}
       {showBadge &&
-        (isLive ? (
+        (isLive ? (    
           <a
             href={liveUrl}
             target="_blank"
