@@ -64,17 +64,17 @@ const skills: Skill[] = [
   { name: "React", icon: SiReact, color: "#61DAFB" },
   { name: "React Native", icon: SiReact, color: "#61DAFB" },
   { name: "Redux", icon: SiRedux, color: "#764ABC" },
-  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
-  { name: "Material UI", icon: SiMui, color: "#007FFF" },
-  { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3" },
-  { name: "Vite", icon: SiVite, color: "#646CFF" },
+  // { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+  // { name: "Material UI", icon: SiMui, color: "#007FFF" },
+  // { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3" },
+  // { name: "Vite", icon: SiVite, color: "#646CFF" },
 
   // Java & Spring
   { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
   { name: "Spring MVC", icon: SiSpring, color: "#6DB33F" },
   { name: "Spring Data JPA", icon: SiSpring, color: "#6DB33F" },
   { name: "Hibernate", icon: SiHibernate, color: "#59666C" },
-  { name: "Maven", icon: SiApachemaven, color: "#C71A36" },
+  // { name: "Maven", icon: SiApachemaven, color: "#C71A36" },
 
   // Backend
   { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
@@ -91,11 +91,11 @@ const skills: Skill[] = [
 
   // Authentication
   { name: "OAuth 2.0", icon: SiAuth0, color: "#EB5424" },
-  { name: "Keycloak", icon: SiKeycloak, color: "#4D4A7F" },
+  // { name: "Keycloak", icon: SiKeycloak, color: "#4D4A7F" },
   { name: "Clerk", icon: SiClerk, color: "#6C47FF" },
 
   // Cloud & Deployment
-  { name: "AWS", icon: FaAws, color: "#FF9900" },
+  // { name: "AWS", icon: FaAws, color: "#FF9900" },
   { name: "AWS Lambda", icon: FaAws, color: "#FF9900" },
   { name: "AWS S3", icon: FaAws, color: "#569A31" },
   { name: "Cloudflare", icon: SiCloudflare, color: "#F38020" },
@@ -104,11 +104,11 @@ const skills: Skill[] = [
 
   // DevOps & Version Control
   { name: "Docker", icon: SiDocker, color: "#2496ED" },
-  { name: "Jenkins", icon: SiJenkins, color: "#D24939" },
+  // { name: "Jenkins", icon: SiJenkins, color: "#D24939" },
   { name: "Git", icon: SiGit, color: "#F05032" },
-  { name: "GitHub", icon: SiGithub, color: "#ffffff" },
-  { name: "GitHub Actions", icon: SiGithubactions, color: "#2088FF" },
-  { name: "Bitbucket", icon: SiBitbucket, color: "#0052CC" },
+  // { name: "GitHub", icon: SiGithub, color: "#ffffff" },
+  // { name: "GitHub Actions", icon: SiGithubactions, color: "#2088FF" },
+  // { name: "Bitbucket", icon: SiBitbucket, color: "#0052CC" },
 
   // Mobile & Tools
   { name: "Android Studio", icon: SiAndroidstudio, color: "#3DDC84" },
