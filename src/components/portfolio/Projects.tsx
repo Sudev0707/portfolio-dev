@@ -208,8 +208,9 @@ export function Projects() {
       </div>
 
       <div className="mt-10 flex justify-center">
-        <Link
-          to="/projects"
+        <a
+        href="https://www.appternal.com/"
+          // to="/projects"
           className="group mx-auto inline-flex items-center gap-2 self-center rounded-full px-6 py-3 text-sm text-muted-foreground transition-colors hover:text-primary"
         >
           See more projects
@@ -217,7 +218,7 @@ export function Projects() {
             className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
             aria-hidden
           />
-        </Link>
+        </a>
       </div>
 
     </Section>

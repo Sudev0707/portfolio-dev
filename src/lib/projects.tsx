@@ -126,7 +126,7 @@ export const projects: Project[] = [
     ],
     year: "2026",
     href: "#",
-    liveUrl: "https://mockpixel.vercel.app/",
+    liveUrl: "https://www.appternal.com/apps/mockpixel/",
     icon: (
       <img
         src={mockpixelIcon}

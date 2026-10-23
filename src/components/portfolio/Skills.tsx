@@ -130,7 +130,7 @@ const skills: Skill[] = [
 ];
 
 const midpoint = Math.ceil(skills.length / 2);
-const firstRow = skills.slice(0, midpoint);
+const firstRow = skills.slice(0, midpoint);   
 const secondRow = skills.slice(midpoint);
 
 function SkillCard({ name, icon: Icon, color }: Skill) {
