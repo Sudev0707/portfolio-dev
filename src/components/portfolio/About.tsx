@@ -139,7 +139,7 @@ export function About() {
               alt="Signature"
               className="hidden h-25 w-45 object-contain md:block"
             />
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <Link
                 to="/about"
                 className="group inline-flex rounded-full items-center gap-2 border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary/60 hover:text-primary"
@@ -147,7 +147,7 @@ export function About() {
                 Know more about me
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
-            </div>
+            </div> */}
 
           </motion.div>
         </motion.div>
