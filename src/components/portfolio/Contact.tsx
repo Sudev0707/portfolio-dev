@@ -29,7 +29,7 @@ export function Contact() {
             className="font-bricolage mt-5 text-balance text-4xl font-semibold tracking-tight md:text-5xl"
             variants={fadeUp}
           >
-            Have a project in mind? <span className="accent-text">Let's talk.</span>
+            Let’s create something <span className="accent-text">great together.</span>
           </motion.h2>
           <motion.p
             className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground"
