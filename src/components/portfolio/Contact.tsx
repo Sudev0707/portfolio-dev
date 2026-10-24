@@ -5,7 +5,7 @@ import { fadeUp, scaleIn, staggerContainer, staggerItem, viewport } from "./moti
 
 export function Contact() {
   return (
-    <section id="contact" className="border-t border-border/60 pb-28">
+    <section id="contact" className="border-t border-border/60 pb-14">
       <div className="relative mx-auto max-w-4xl px-6 text-center pt-28">
         <div
           aria-hidden
@@ -96,7 +96,7 @@ export function Contact() {
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
-          <span>© 2026 Sudev Majhi. Crafted with care.</span>
+          <span>© 2026 Sudev Majhi</span>
           {/* <span className="font-mono">v1.0 · Built with TanStack Start</span> */}
         </div>
       </motion.footer>

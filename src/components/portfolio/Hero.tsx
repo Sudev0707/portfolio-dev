@@ -265,147 +265,155 @@ export function Hero() {
 
       <div className="relative z-20 mx-auto w-full max-w-6xl px-6 py-20">
         <div className="flex flex-col items-center justify-between gap-12 lg:flex-row lg:items-center lg:gap-16">
-        <div className="w-full max-w-4xl flex-1">
-          {/* Location subtitle — GTA style */}
-          <motion.div
-            custom={0.05}
-            initial="hidden"
-            animate={introDone ? "visible" : "hidden"}
-            variants={fadeUp}
-          >
-            <div className="inline-flex items-center gap-3 rounded-full border-primary/40 bg-black/40 px-4 py-2 backdrop-blur-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/60 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-              </span>
-              <span className="font-gta text-xs tracking-[0.25em] text-primary md:text-sm">
-                AVAILABLE · 2026
-              </span>
-              <span className="hidden h-3 w-px bg-primary/40 sm:block" />
-              <span className="hidden font-gta text-xs tracking-[0.2em] text-muted-foreground sm:inline">
-                MOBILE & FULL-STACK
-              </span>
+          <div className="w-full max-w-4xl flex-1">
+            {/* Location subtitle — GTA style */}
+            <motion.div
+              custom={0.05}
+              initial="hidden"
+              animate={introDone ? "visible" : "hidden"}
+              variants={fadeUp}
+            >
+              <div className="inline-flex items-center gap-3 rounded-full border-primary/40 bg-black/40 px-4 py-2 backdrop-blur-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/60 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                </span>
+                <span className="font-gta text-xs tracking-[0.25em] text-primary md:text-sm">
+                  AVAILABLE · 2026
+                </span>
+                <span className="hidden h-3 w-px bg-primary/40 sm:block" />
+                <span className="hidden font-gta text-xs tracking-[0.2em] text-muted-foreground sm:inline">
+                  MOBILE & FULL-STACK
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Main headline — slam in from scale */}
+            <div className="mt-8 space-y-0 md:mt-10">
+              <motion.h4
+                className="font-gta text-balance text-[clamp(2.5rem,8vw,5rem)] leading-[0.95] tracking-wide text-foreground"
+                initial={{ opacity: 0, scale: 1.4, y: 40, filter: "blur(10px)" }}
+                animate={
+                  introDone
+                    ? { opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }
+                    : { opacity: 0, scale: 1.4, y: 40, filter: "blur(10px)" }
+                }
+                transition={{
+                  duration: 0.8,
+                  delay: 0.15,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+              >
+                CRAFTING MOBILE APPS
+              </motion.h4>
+
+              <motion.h4
+                className="font-gta text-balance text-[clamp(1.8rem,6vw,4rem)] leading-[0.95] tracking-wide text-foreground"
+                initial={{ opacity: 0, scale: 1.4, y: 40, filter: "blur(10px)" }}
+                animate={
+                  introDone
+                    ? { opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }
+                    : { opacity: 0, scale: 1.4, y: 40, filter: "blur(10px)" }
+                }
+                transition={{
+                  duration: 0.8,
+                  delay: 0.3,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+              >
+                AND SOFTWARE THAT
+              </motion.h4>
+
+              <motion.h4
+                className="font-gta accent-text text-balance text-[clamp(1.8rem,6vw,4rem)] leading-[0.95] tracking-wide"
+                initial={{ opacity: 0, scale: 1.5, x: -30 }}
+                animate={
+                  introDone ? { opacity: 1, scale: 1, x: 0 } : { opacity: 0, scale: 1.5, x: -30 }
+                }
+                transition={{
+                  duration: 0.7,
+                  delay: 0.5,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                SHIPS.
+              </motion.h4>
+              <motion.p
+                className="font-gta mt-2 text-2xl tracking-[0.2em] text-muted-foreground md:text-3xl"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: introDone ? 1 : 0, x: introDone ? 0 : -20 }}
+                transition={{ duration: 0.6, delay: 0.65 }}
+              >
+                RELIABLY. BEAUTIFULLY.
+              </motion.p>
             </div>
-          </motion.div>
 
-          {/* Main headline — slam in from scale */}
-          <div className="mt-8 space-y-0 md:mt-10">
-            <motion.h4
-              className="font-gta text-balance text-[clamp(2.5rem,8vw,5rem)] leading-[0.95] tracking-wide text-foreground"
-              initial={{ opacity: 0, scale: 1.4, y: 40, filter: "blur(10px)" }}
-              animate={
-                introDone
-                  ? { opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }
-                  : { opacity: 0, scale: 1.4, y: 40, filter: "blur(10px)" }
-              }
-              transition={{
-                duration: 0.8,
-                delay: 0.15,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-            >
-              CRAFTING MOBILE APPS
-            </motion.h4>
-
-            <motion.h4
-              className="font-gta text-balance text-[clamp(1.8rem,6vw,4rem)] leading-[0.95] tracking-wide text-foreground"
-              initial={{ opacity: 0, scale: 1.4, y: 40, filter: "blur(10px)" }}
-              animate={
-                introDone
-                  ? { opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }
-                  : { opacity: 0, scale: 1.4, y: 40, filter: "blur(10px)" }
-              }
-              transition={{
-                duration: 0.8,
-                delay: 0.3,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-            >
-              AND SOFTWARE THAT
-            </motion.h4>
-
-            <motion.h4
-              className="font-gta accent-text text-balance text-[clamp(1.8rem,6vw,4rem)] leading-[0.95] tracking-wide"
-              initial={{ opacity: 0, scale: 1.5, x: -30 }}
-              animate={
-                introDone
-                  ? { opacity: 1, scale: 1, x: 0 }
-                  : { opacity: 0, scale: 1.5, x: -30 }
-              }
-              transition={{
-                duration: 0.7,
-                delay: 0.5,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-            >
-              SHIPS.
-            </motion.h4>
             <motion.p
-              className="font-gta mt-2 text-2xl tracking-[0.2em] text-muted-foreground md:text-3xl"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: introDone ? 1 : 0, x: introDone ? 0 : -20 }}
-              transition={{ duration: 0.6, delay: 0.65 }}
+              className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground md:mt-10 md:text-xl"
+              initial="hidden"
+              animate={introDone ? "visible" : "hidden"}
+              custom={0.2}
+              variants={fadeUp}
             >
-              RELIABLY. BEAUTIFULLY.
+              I&apos;m{" "}
+              <Link
+                to="/about"
+                className="inline-block text-primary font-bricolage text-2xl font-bold transition-all duration-300 hover:scale-125 "
+              >
+                Sudev Majhi
+              </Link>
+              — a mobile and full-stack engineer focused on native-quality experiences, performance,
+              and the interaction details that make products feel inevitable.
             </motion.p>
-          </div>
 
-          <motion.p
-            className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground md:mt-10 md:text-xl"
-            initial="hidden"
-            animate={introDone ? "visible" : "hidden"}
-            custom={0.2}
-            variants={fadeUp}
-          >
-            I&apos;m{" "}
-            <Link
-              to="/about"
-              className="inline-block text-primary font-bricolage text-2xl font-bold transition-all duration-300 hover:scale-125 "
+            <motion.div
+              className="my-8 flex items-center justify-center lg:hidden"
+              initial="hidden"
+              animate={introDone ? "visible" : "hidden"}
+              custom={0.28}
+              variants={fadeUp}
             >
-              Sudev Majhi
-            </Link>
-            — a mobile and full-stack engineer focused on
-            native-quality experiences, performance, and the interaction details
-            that make products feel inevitable.
-          </motion.p>
+              <DeviceMockupSlider visible={introDone} />
+            </motion.div>
 
-          <motion.div
-            className="my-8 flex items-center justify-center lg:hidden"
-            initial="hidden"
-            animate={introDone ? "visible" : "hidden"}
-            custom={0.28}
-            variants={fadeUp}
-          >
-            <DeviceMockupSlider visible={introDone} />
-          </motion.div>
-
-          <motion.div
-            className="mt-10 flex flex-wrap items-center gap-4"
-            initial="hidden"
-            animate={introDone ? "visible" : "hidden"}
-            custom={0.35}
-            variants={fadeUp}
-          >
-            <a
-              href="#projects"
-              className="group relative hidden items-center gap-2 overflow-hidden border border-primary/60 bg-primary/90 px-6 py-3 font-gta text-sm tracking-[0.15em] text-primary-foreground shadow-[0_0_40px_oklch(0.62_0.14_162/0.3)] transition-transform duration-300 hover:scale-[1.02] md:inline-flex"
+            <motion.div
+              className="mt-10 mb-8 flex flex-nowrap items-center justify-center gap-2 sm:mb-0 sm:gap-4"
+              initial="hidden"
+              animate={introDone ? "visible" : "hidden"}
+              custom={0.35}
+              variants={fadeUp}
             >
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-              <span className="relative">VIEW WORK</span>
-              <span className="relative transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden>
-                →
-              </span>
-            </a>
-            {/* <a
-              href="#contact"
-              className="inline-flex items-center gap-2 border border-border/80 bg-black/30 px-6 py-3 font-gta text-sm tracking-[0.15em] text-foreground backdrop-blur-sm transition-colors hover:border-primary/50 hover:text-primary"
-            >
-              CONTACT
-            </a> */}
-          </motion.div>
+              <a
+                href="#projects"
+                className="group relative inline-flex shrink-0 items-center gap-1.5 overflow-hidden border border-primary/60 bg-primary/90 px-4 py-3 font-gta text-sm tracking-[0.06em] text-primary-foreground shadow-[0_0_40px_oklch(0.62_0.14_162/0.3)] transition-transform duration-300 hover:scale-[1.02] sm:gap-2 sm:px-6 sm:py-3 sm:tracking-[0.15em]"
+              >
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+                <span className="relative">VIEW WORK</span>
+                <span
+                  className="relative transition-transform duration-300 group-hover:translate-x-0.5"
+                  aria-hidden
+                >
+                  →
+                </span>
+              </a>
 
-          {/* Stats — GTA HUD bars */}
-          {/* <motion.dl
+              <a
+                href="https://www.appternal.com/"
+                className="group relative inline-flex shrink-0 items-center gap-1.5 overflow-hidden border border-primary/60 bg-teal-50 px-4 py-3 font-gta text-sm tracking-[0.06em] text-primary-foreground shadow-[0_0_40px_oklch(0.62_0.14_162/0.3)] transition-transform duration-300 hover:scale-[1.02] sm:gap-2 sm:px-6 sm:py-3 sm:tracking-[0.15em]"
+              >
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+                <span className="relative">VIEW WEBSITE</span>
+                <span
+                  className="relative transition-transform duration-300 group-hover:translate-x-0.5"
+                  aria-hidden
+                >
+                  →
+                </span>
+              </a>
+            </motion.div>
+
+            {/* Stats — GTA HUD bars */}
+            {/* <motion.dl
             className="mt-20 grid grid-cols-2 gap-6 border-t border-primary/20 pt-10 sm:grid-cols-4"
             initial="hidden"
             animate={introDone ? "visible" : "hidden"}
@@ -436,11 +444,11 @@ export function Hero() {
               </motion.div>
             ))}
           </motion.dl> */}
-        </div>
+          </div>
 
-        <div className="hidden flex-shrink-0 items-center justify-center lg:flex">
-          <DeviceMockupSlider visible={introDone} />
-        </div>
+          <div className="hidden flex-shrink-0 items-center justify-center lg:flex">
+            <DeviceMockupSlider visible={introDone} />
+          </div>
         </div>
       </div>
 
@@ -452,9 +460,7 @@ export function Hero() {
         transition={{ delay: 1.4, duration: 0.8 }}
         aria-hidden
       >
-        <span className="font-gta text-[10px] tracking-[0.4em] text-muted-foreground">
-          SCROLL
-        </span>
+        <span className="font-gta text-[10px] tracking-[0.4em] text-muted-foreground">SCROLL</span>
         <motion.span
           className="block h-8 w-px bg-gradient-to-b from-primary/60 to-transparent"
           animate={{ scaleY: [0.4, 1, 0.4], opacity: [0.4, 1, 0.4] }}
