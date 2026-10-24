@@ -377,7 +377,7 @@ export function Hero() {
             </motion.div>
 
             <motion.div
-              className="mt-10 mb-8 flex flex-nowrap items-center justify-center gap-2 sm:mb-0 sm:gap-4"
+              className="mt-10 mb-8 flex flex-nowrap items-center justify-center gap-2 sm:mb-0 sm:justify-start sm:gap-4"
               initial="hidden"
               animate={introDone ? "visible" : "hidden"}
               custom={0.35}
@@ -399,7 +399,7 @@ export function Hero() {
 
               <a
                 href="https://www.appternal.com/"
-                className="group relative inline-flex shrink-0 items-center gap-1.5 overflow-hidden border border-primary/60 bg-teal-50 px-4 py-3 font-gta text-sm tracking-[0.06em] text-primary-foreground shadow-[0_0_40px_oklch(0.62_0.14_162/0.3)] transition-transform duration-300 hover:scale-[1.02] sm:gap-2 sm:px-6 sm:py-3 sm:tracking-[0.15em]"
+                className="group relative inline-flex shrink-0 items-center gap-1.5 overflow-hidden border border-teal-50 bg-teal-50 px-4 py-3 font-gta text-sm tracking-[0.06em] text-primary-foreground shadow-[0_0_40px_oklch(0.62_0.14_162/0.3)] transition-transform duration-300 hover:scale-[1.02] sm:gap-2 sm:px-6 sm:py-3 sm:tracking-[0.15em]"
               >
                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
                 <span className="relative">VIEW WEBSITE</span>
