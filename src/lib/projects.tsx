@@ -93,7 +93,7 @@ export const projects: Project[] = [
     ],
     year: "2026",
     href: "#",
-    liveUrl: "https://linkdrop-app-ten.vercel.app/",
+    liveUrl: "https://linkrepo-app.vercel.app/",
     icon: (
       <img
         src={linkrepoIcon}
