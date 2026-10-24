@@ -147,14 +147,14 @@ function GtaIntro({ phase }: { phase: IntroPhase }) {
                 exit={{ opacity: 0, scale: 1.8, filter: "blur(12px)" }}
                 transition={{ duration: 0.5 }}
               >
-                <motion.p
+                {/* <motion.p
                   className="font-gta text-sm tracking-[0.5em] text-primary md:text-base"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.5 }}
                 >
                   WELCOME TO
-                </motion.p>
+                </motion.p> */}
                 <motion.h1
                   className="font-gta mt-2 text-[clamp(3.5rem,14vw,9rem)] leading-none text-white"
                   initial={{ opacity: 0, scale: 2.2, filter: "blur(8px)" }}
@@ -186,7 +186,7 @@ function GtaIntro({ phase }: { phase: IntroPhase }) {
           </AnimatePresence>
 
           {/* Diagonal wipe */}
-          <AnimatePresence>
+          {/* <AnimatePresence>
             {phase === "wipe" && (
               <motion.div
                 key="wipe"
@@ -198,7 +198,7 @@ function GtaIntro({ phase }: { phase: IntroPhase }) {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-primary/10" />
               </motion.div>
             )}
-          </AnimatePresence>
+          </AnimatePresence> */}
         </motion.div>
       )}
     </AnimatePresence>
