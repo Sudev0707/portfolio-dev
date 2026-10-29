@@ -3,6 +3,8 @@
 
 import { motion } from "motion/react";
 import treats24Banner from "@/assets/image/Treats24_ Local Delivery for Howrah.png";
+import treats24MobileBanner from "@/assets/image/Treats24_Mobile.jpeg";
+
 import { Section } from "./Section";
 import { fadeUp, viewport } from "./motion";
 
@@ -25,22 +27,31 @@ export function CurrentlyBuilding() {
           initial="rest"
           whileHover="hover"
         >
-          {/* Banner Image */}
-          <a
-            href={treats24Url}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Explore Treats24"
-            className="block md:pointer-events-none"
-          >
+          {/* Desktop Banner - Only button is clickable */}
+          <div className="hidden md:block">
             <img
               src={treats24Banner}
               alt="Treats24 — Local Delivery for Howrah"
               className="block h-auto w-full object-cover"
             />
+          </div>
+
+          {/* Mobile Banner - Entire image is clickable */}
+          <a
+            href={treats24Url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Explore Treats24"
+            className="block md:hidden"
+          >
+            <img
+              src={treats24MobileBanner}
+              alt="Treats24 — Local Delivery for Howrah"
+              className="block h-auto w-full object-cover"
+            />
           </a>
 
-          {/* Explore Button */}
+          {/* Desktop Explore Button */}
           <motion.a
             href={treats24Url}
             target="_blank"
@@ -63,6 +74,7 @@ export function CurrentlyBuilding() {
             className="absolute bottom-6 left-1/2 z-20 hidden -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-white/20 bg-black px-7 py-3 text-sm font-semibold text-emerald-500 shadow-xl hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white md:inline-flex"
           >
             Explore
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
