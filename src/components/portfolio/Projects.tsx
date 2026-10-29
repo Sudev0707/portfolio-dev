@@ -145,7 +145,7 @@ export function Projects() {
     <Section
       id="projects"
       eyebrow="Selected work"
-      title={<>Projects I'm proud of.</>}
+      title={<>A Little Bit of What I Do.</>}
       // description="A short list of recent work. More available on request."
       className="pb-24"
     >
