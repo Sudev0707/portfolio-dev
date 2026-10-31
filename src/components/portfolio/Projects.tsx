@@ -147,7 +147,7 @@ export function Projects() {
       eyebrow="Selected work"
       title={<>A Little Bit of What I Do.</>}
       // description="A short list of recent work. More available on request."
-      className="pb-24"
+      className="pb-10"
     >
       {/* Desktop: sticky scroll reveal */}
       <div className="hidden lg:grid lg:grid-cols-[1.3fr_0.7fr] lg:gap-14">

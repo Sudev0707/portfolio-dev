@@ -18,7 +18,7 @@ import {
 
 export function About() {
   return (
-    <Section id="about" eyebrow="About" title={<></>} className="pt-24">
+    <Section id="about" eyebrow="About" title={<></>} className="pt-10">
       <div className="grid items-start gap-12 md:grid-cols-[2fr_1fr] px-0">
         <motion.div
           className="space-y-5 text-base leading-relaxed text-muted-foreground"

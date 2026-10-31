@@ -46,7 +46,7 @@ export function Section({
         >
           <motion.div
             className={cn(
-              "flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-muted-foreground",
+              "flex items-center gap-2 text-lg uppercase tracking-[0.18em] text-muted-foreground",
               centered && "justify-center",
             )}
             variants={centered ? fadeUp : slideInLeft}

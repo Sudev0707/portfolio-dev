@@ -78,7 +78,7 @@ const skills: Skill[] = [
 
   // Java & Spring
   { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
-  { name: "Spring MVC", icon: SiSpring, color: "#6DB33F" },
+  // { name: "Spring MVC", icon: SiSpring, color: "#6DB33F" },
   { name: "Spring Data JPA", icon: SiSpring, color: "#6DB33F" },
   { name: "Hibernate", icon: SiHibernate, color: "#59666C" },
   // { name: "Maven", icon: SiApachemaven, color: "#C71A36" },
@@ -87,7 +87,7 @@ const skills: Skill[] = [
   { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
   { name: "Express.js", icon: SiExpress, color: "#ffffff" },
   { name: "REST APIs", icon: SiPostman, color: "#FF6C37" },
-  { name: "WebSockets", icon: SiSocketdotio, color: "#ffffff" },
+  // { name: "WebSockets", icon: SiSocketdotio, color: "#ffffff" },
 
   // Databases
   { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
@@ -97,7 +97,7 @@ const skills: Skill[] = [
   { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
 
   // Authentication
-  { name: "OAuth 2.0", icon: SiAuth0, color: "#EB5424" },
+  // { name: "OAuth 2.0", icon: SiAuth0, color: "#EB5424" },
   // { name: "Keycloak", icon: SiKeycloak, color: "#4D4A7F" },
   { name: "Clerk", icon: SiClerk, color: "#6C47FF" },
 
@@ -106,8 +106,8 @@ const skills: Skill[] = [
   { name: "AWS Lambda", icon: FaAws, color: "#FF9900" },
   { name: "AWS S3", icon: FaAws, color: "#569A31" },
   { name: "Cloudflare", icon: SiCloudflare, color: "#F38020" },
-  { name: "Vercel", icon: SiVercel, color: "#ffffff" },
-  { name: "Render", icon: SiRender, color: "#46E3B7" },
+  // { name: "Vercel", icon: SiVercel, color: "#ffffff" },
+  // { name: "Render", icon: SiRender, color: "#46E3B7" },
 
   // DevOps & Version Control
   { name: "Docker", icon: SiDocker, color: "#2496ED" },
@@ -122,7 +122,7 @@ const skills: Skill[] = [
   { name: "Xcode", icon: SiXcode, color: "#147EFB" },
   { name: "Postman", icon: SiPostman, color: "#FF6C37" },
   { name: "Sentry", icon: SiSentry, color: "#362D59" },
-  { name: "Cloudinary", icon: SiCloudinary, color: "#3448C5" },
+  // { name: "Cloudinary", icon: SiCloudinary, color: "#3448C5" },
 
   // AI Tools
   { name: "Cursor", icon: CursorIcon, color: "#ffffff" },
@@ -154,7 +154,7 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="border-t border-border/60 pt-28 pb-28 max-w-6xl px-6 mx-auto"
+      className="border-t border-border/60 pt-10 pb-14 max-w-6xl px-6 mx-auto"
       // eyebrow="Skills"
       // title={<>Tools I reach for, daily.</>}
     >
